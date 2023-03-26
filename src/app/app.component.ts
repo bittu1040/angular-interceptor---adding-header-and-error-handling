@@ -1,8 +1,6 @@
-import { HttpErrorResponse } from "@angular/common/http";
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ErrorHandleService } from "./error-handle.service";
-import { globalErrorHandlingInterceptor } from "./interceptors.service";
 
 @Component({
   selector: "my-app",
@@ -11,17 +9,15 @@ import { globalErrorHandlingInterceptor } from "./interceptors.service";
 })
 export class AppComponent implements OnInit {
   response1: any;
-  errorResponse: HttpErrorResponse
+  errorResponse: string
   constructor(private http: HttpClient, private ErrorHandleService: ErrorHandleService) {}
   ngOnInit() {
     this.ErrorHandleService.showError.subscribe({
       next:(data)=>{
+          this.errorResponse= data;
         console.log("data",data)
+          alert("There is server side error");
       },
-      error:(error)=>{
-        this.errorResponse= error;
-        console.log("errrrrrrrrrrror")
-      }
     })
   }
 

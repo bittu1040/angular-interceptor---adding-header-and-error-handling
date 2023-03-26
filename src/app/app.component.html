@@ -1,13 +1,16 @@
-<div>
-  <h3>Response</h3>
-  {{ response1 | json }}
-</div>
-<button (click)="getPosts()">Make request</button>
-<div>
+
+<div style="position: fixed; top: 0px; background-color: red">
   {{ errorResponse }}
 </div>
+
+
+
+<h2>understand error handling using interceptor</h2>
 
 <br /><br />
 <hr />
 
+<div style="display: flex; gap: 10px;">
 <app-component1></app-component1>
+<app-component2></app-component2>
+</div>

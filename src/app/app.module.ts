@@ -7,10 +7,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { globalErrorHandlingInterceptor, I2, I3 } from './interceptors.service';
 import { Component1Component } from './component1/component1.component';
 import { ErrorHandleService } from './error-handle.service';
+import { Component2Component } from './component2/component2.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, Component1Component ],
+  declarations: [ AppComponent, Component1Component, Component2Component],
   providers:[ErrorHandleService,
     {
       provide: HTTP_INTERCEPTORS,
